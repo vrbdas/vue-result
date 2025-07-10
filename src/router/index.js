@@ -4,7 +4,7 @@ import { useAuthStore } from '@/stores/auth';
 import { useRequestsStore } from '@/stores/requests';
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory('/vue-result/'),
   routes: [
     {
       path: '/',
