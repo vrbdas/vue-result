@@ -11,14 +11,13 @@ export const useRequestsStore = defineStore('requestsStore', () => {
   const requests = ref([]);
 
   async function saveRequest(data) {
-    console.log(authStore.userData.localId);
     try {
       if (!authStore.userData.localId || !authStore.userData.idToken) {
         throw new Error('Пользователь не авторизован');
       }
   
       const response = await axios.post(
-        `https://vue-courseworkfinal-default-rtdb.asia-southeast1.firebasedatabase.app/${authStore.userData.localId}/requests.json?auth=${authStore.userData.idToken}`,
+        `https://result-d962a-default-rtdb.asia-southeast1.firebasedatabase.app/${authStore.userData.localId}/requests.json?auth=${authStore.userData.idToken}`,
         data
       );
   
@@ -37,7 +36,7 @@ export const useRequestsStore = defineStore('requestsStore', () => {
   async function loadRequests() {
     try {
       const response = await axios.get(
-        `https://vue-courseworkfinal-default-rtdb.asia-southeast1.firebasedatabase.app/${authStore.userData.localId}/requests.json?auth=${authStore.userData.idToken}`
+        `https://result-d962a-default-rtdb.asia-southeast1.firebasedatabase.app/${authStore.userData.localId}/requests.json?auth=${authStore.userData.idToken}`
       );
       requests.value = Object.keys(response.data).map((key) => {
         return {

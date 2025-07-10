@@ -63,8 +63,9 @@ watch(
 
 <template>
   <div class="card">
-    {{ authStore.userData }}
     <h2 class="title_xlarge">Войти в систему</h2>
+    <p>Тестовый email: <strong>testuser@gmail.com</strong></p>
+    <p>Пароль: <strong>123456</strong></p>
     <form @submit="onSubmit">
       <label>
         Email:

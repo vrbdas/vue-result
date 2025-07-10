@@ -14,7 +14,6 @@ export const useAuthStore = defineStore('authStore', () => {
   async function login(item) {
     try {
       const {data} = await axios.post(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${import.meta.env.VITE_FB_KEY}`, {...item, returnSecureToken: true});
-      console.log(data);
       userData.value = {
         idToken: data.idToken,
         refreshToken: data.refreshToken,
