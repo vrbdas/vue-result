@@ -1,41 +1,25 @@
-# vue-courseworkfinal
+# Онлайн-банк — учебный проект на Vue 3
 
-This template should help get you started developing with Vue 3 in Vite.
+Учебный проект, имитирующий интерфейс онлайн-банка. Реализована авторизация, создание и просмотр заявок, смена их статуса, а также обмен сообщениями. Проект находится в разработке.
 
-## Recommended IDE Setup
+## 🔐 Основной функционал
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- Авторизация через Firebase Auth
+- Создание новых заявок
+- Просмотр и изменение статуса заявок
+- Обмен сообщениями в рамках заявки
+- Хранение и загрузка данных через Firebase Realtime Database
 
-## Customize configuration
+> ⚠️ Проект находится в разработке, часть функциональности и дизайна может быть не завершена.
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## 🔧 Использованные технологии
 
-## Project Setup
+- Vue 3 (Composition API)
+- Pinia (глобальное состояние)
+- Firebase Auth
+- Firebase Realtime Database
+- SCSS
 
-```sh
-npm install
-```
+## 🔗 Демо
 
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-## firebase rules:
-{
-  "rules": {
-    "$userId": { 
-      "requests": {
-        ".read": "auth != null && auth.uid === $userId",
-        ".write": "auth != null && auth.uid === $userId"
-      }
-    }
-  }
-}
+[Открыть проект](https://vrbdas.github.io/vue-result/)
